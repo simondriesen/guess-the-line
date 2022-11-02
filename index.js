@@ -155,7 +155,7 @@ map.on('load', async () => {
 
     map.removeFeatureState({ source: 'capital-lines' });
 
-    if (features.length) {
+    if (features.length && !clickedCapitalFeatures.find(f => f.properties.CountryName === features[0].properties.CountryName)) {
       map.getCanvas().style.cursor = 'pointer';
       map.setFeatureState({ source: features[0].source, id: features[0].id }, { hover: true });
     } else map.getCanvas().style.cursor = '';
@@ -167,7 +167,7 @@ map.on('load', async () => {
       bboxAroundPoint, { layers: ['capital-lines'] },
     );
 
-    if (features.length) {
+    if (features.length && !clickedCapitalFeatures.find(f => f.properties.CountryName === features[0].properties.CountryName)) {
       const coords = JSON.parse(features[0].properties.coordinates);
       clickedCapitalFeatures.push({
         geometry: {
