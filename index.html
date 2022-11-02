@@ -6,10 +6,24 @@
     <style>
       body { margin: 0; padding: 0; }
       #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+      h1, h2 { 
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        font-family: sans-serif;
+        color: white;
+      }
+      h2 {
+        top: 50px;
+        font-weight: lighter;
+      }
     </style>
   </head>
   <body>
     <div id="map"></div>
+    <h1>Do you know these 10 capitals only by their latitude</h1>
+    <h2>click on a line to see the anwser</h2>
   </body>
   <script src='https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.js'></script>
   <script src="./index.js" type="module"></script>
